@@ -3,6 +3,7 @@ import T from "prop-types";
 
 export const Item = ({ trip = {} }) => {
   const { fromName, toName, departAt, vehicle } = trip;
+  const date = departAt ? departAt.slice(0, 10) : departAt;
   return (
     <li>
       <p>
@@ -15,7 +16,7 @@ export const Item = ({ trip = {} }) => {
       </p>
       <p>
         <span>Depart at: </span>
-        {departAt}
+        {date}
       </p>
       <p>
         <span>Vehicle: </span>
